@@ -1,7 +1,7 @@
 import fs from "fs";
 import { resolve } from 'path';
 import { StartFunc as GetTableNames } from "../GetTableNames.js";
-const CommonHtmlFiles = ["index", "login", "register"];
+const CommonHtmlFiles = ["index", "login", "register", "validation"];
 
 const LocalFuncGetFiles = ({ inSrcPath, inSourceFolderName }) => {
     const root = `${inSrcPath}/${inSourceFolderName}/HtmlTemplateFiles`;
