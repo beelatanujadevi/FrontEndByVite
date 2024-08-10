@@ -2,15 +2,13 @@ import { StartFunc as StartFuncAddListeners } from "./AddListeners/StartFunc.js"
 import { StartFunc as StartFuncCheckTocken } from "./Check/Tocken.js";
 
 const StartFunc = () => {
+    LocalDeleteCookie();
     StartFuncAddListeners();
 };
 
-if (StartFuncCheckTocken({ inTokenName: "KSToken" }) !== false) {
-
-    const url = new URL(window.location.href);
-    let NewURl = new URL("./index.html", url);
-
-    window.location.href = NewURl.href;
+let LocalDeleteCookie = () => {
+    let lcoalKTokenId = "KSToken";
+    document.cookie = `${lcoalKTokenId}=; expires=Thu, 01 Jan 1947 00:00:00 UTC; path=/;`;
 };
 
 export { StartFunc };
