@@ -1,0 +1,81 @@
+{% set title = 'Account Profile' %}
+
+{% extends 'src/AllTables/WithSSR/WithSubTable/SourceCode/Masters/withSubTable.html' %}
+
+
+{% block content %}
+<div class="pagetitle">
+    <h1>Form Elements</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Forms</li>
+            <li class="breadcrumb-item active">Elements</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{tableName}}</h5>
+
+                    <!-- General Form Elements -->
+                    <form onsubmit="return false" id="FormId">
+                        <div class="row ColumnsRow">
+                            {% for ColumnName, ColumnInfo in columnData %}
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">{{ColumnInfo.HtmlTags.Create.title}}</label>
+
+                                <div class="col-md-8">
+                                    {% if ColumnInfo.type === "DATEONLY" %}
+                                    <input name="{{ColumnName}}" type="date" class="form-control" autocomplete="off"
+                                        {{ColumnInfo.HtmlTags.Create.RequiredTag}}
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}
+                                        {{ColumnInfo.HtmlTags.Alter.disabledTag}}>
+                                    {% endif %}
+
+                                    {% if ColumnInfo.type === "STRING" %}
+                                    <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
+                                        {{ColumnInfo.HtmlTags.Create.RequiredTag}}
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}
+                                        {{ColumnInfo.HtmlTags.Alter.disabledTag}}>
+                                    {% endif %}
+                                    {% if ColumnInfo.type === "NUMBER" %}
+                                    <input name="{{ColumnName}}" type="number" class="form-control" autocomplete="off"
+                                        {{ColumnInfo.HtmlTags.Create.RequiredTag}}
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}
+                                        {{ColumnInfo.HtmlTags.Alter.disabledTag}}>
+                                    {% endif %}
+                                    <div class="invalid-feedback">
+                                        {% if ColumnInfo.HtmlTags.Create.BS5.ErrorText %}
+                                        {{ColumnInfo.HtmlTags.Create.BS5.ErrorText}}
+                                        {% else %}
+                                        {{ColumnName}} Should not be empty!!
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-10">
+                                <button id="UpdateButtonId" class="btn btn-warning">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block js %}
+<script type="module" src="../Js/pages/{{tableName}}AlterWithDL/StartFunc.js"></script>
+{% endblock %}
