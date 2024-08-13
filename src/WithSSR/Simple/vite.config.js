@@ -19,7 +19,7 @@ const root = resolve(__dirname, SrcFolder);
 
 console.log("root : ", root);
 
-const CommonTableName = "Accounts";
+const CommonTableName = "StudentNames";
 
 let files = StartFuncGetFiles({ inSrcPath: SrcFolder });
 // console.log("files : ", files);
