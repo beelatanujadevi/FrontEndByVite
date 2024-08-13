@@ -7,7 +7,7 @@ let StartFunc = async () => {
     let jVarLocalRowPk = getUrlQueryParams({ inGetKey: "inRowPk" });
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${jVarLocalRowPk}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${UrlJson.EndPoint}/${jVarLocalRowPk}`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     let data = await response.json();
 
