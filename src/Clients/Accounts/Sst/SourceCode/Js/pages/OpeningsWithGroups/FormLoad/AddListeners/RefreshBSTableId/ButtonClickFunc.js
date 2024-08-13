@@ -6,7 +6,7 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
 let StartFunc = async () => {
 
-    let [a, b] = Promise.all([Accounts, Openings]);
+    let [a, b] = await Promise.all([Accounts(), Openings()]);
 
     StartFuncAfterFetch({ inAccounts: a, inOpenings: b });
 };
