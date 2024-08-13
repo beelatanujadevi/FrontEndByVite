@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Openings",
+        "key": "Openings",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "OpeningsAsIs.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    }
+]
