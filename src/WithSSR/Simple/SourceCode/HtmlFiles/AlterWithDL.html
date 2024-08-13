@@ -1,6 +1,6 @@
 {% set title = 'Account Profile' %}
 
-{% extends 'src/WithSSR/Simple/SourceCode/Masters/noDL.html' %}
+{% extends 'src/WithSSR/Simple/SourceCode/Masters/Simple.html' %}
 
 {% block content %}
 <div class="pagetitle">
@@ -29,20 +29,32 @@
                                 <label class="col-md-4 col-form-label">{{ColumnInfo.HtmlTags.Create.title}}</label>
 
                                 <div class="col-md-8">
+                                    {% if ColumnInfo.references %}
+                                    <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
+                                        list="{{ColumnInfo.references.model}}DLId"
+                                        {{ColumnInfo.HtmlTags.Create.RequiredTag}}
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                                    {% else %}
+
                                     {% if ColumnInfo.type === "DATEONLY" %}
                                     <input name="{{ColumnName}}" type="date" class="form-control" autocomplete="off"
                                         {{ColumnInfo.HtmlTags.Create.RequiredTag}}
-                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}
+                                        {{ColumnInfo.HtmlTags.Alter.disabledTag}}>
                                     {% endif %}
 
                                     {% if ColumnInfo.type === "STRING" %}
                                     <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
                                         {{ColumnInfo.HtmlTags.Create.RequiredTag}}
-                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}
+                                        {{ColumnInfo.HtmlTags.Alter.disabledTag}}>
                                     {% endif %}
                                     {% if ColumnInfo.type === "NUMBER" %}
                                     <input name="{{ColumnName}}" type="number" class="form-control" autocomplete="off"
-                                        {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                                        {{ColumnInfo.HtmlTags.Create.RequiredTag}}
+                                        {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}
+                                        {{ColumnInfo.HtmlTags.Alter.disabledTag}}>
+                                    {% endif %}
                                     {% endif %}
                                     <div class="invalid-feedback">
                                         {% if ColumnInfo.HtmlTags.Create.BS5.ErrorText %}
@@ -68,9 +80,14 @@
     </div>
 </section>
 
+{% for ColumnName, ColumnInfo in columnData %}
+{% if ColumnInfo.references %}
+<datalist id="{{ColumnInfo.references.model}}DLId"></datalist>
+{% endif %}
+{% endfor %}
 
 {% endblock %}
 
 {% block js %}
-<script type="module" src="../Js/pages/AlterSSR/StartFunc.js"></script>
+<script type="module" src="../Js/pages/{{tableName}}AlterWithDL/StartFunc.js"></script>
 {% endblock %}
