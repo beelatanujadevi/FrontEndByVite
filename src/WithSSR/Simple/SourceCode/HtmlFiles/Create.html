@@ -29,6 +29,11 @@
                                 {{ColumnInfo.HtmlTags.Create.RequiredTag}}
                                 {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
                             {% endif %}
+                            {% if ColumnInfo.type === "MONTH" %}
+                            <input name="{{ColumnName}}" type="month" class="form-control" autocomplete="off"
+                                {{ColumnInfo.HtmlTags.Create.RequiredTag}}
+                                {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                            {% endif %}
                             {% if ColumnInfo.type === "STRING" %}
                             <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
                                 {{ColumnInfo.HtmlTags.Create.RequiredTag}}
