@@ -7,6 +7,11 @@
                 "name": "AsIs",
                 "url": "OpeningsAsIs.html",
                 "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "OpeningsWithGroups.html",
+                "icon": "bi bi-plus-circle"
             }
         ]
     }
