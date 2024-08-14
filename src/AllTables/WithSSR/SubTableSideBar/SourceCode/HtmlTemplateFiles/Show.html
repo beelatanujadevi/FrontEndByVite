@@ -24,11 +24,10 @@
             <th data-formatter="jFGlobalSerialColumn">#</th>
             {% for ColumnName, ColumnInfo in columnData %}
             {% if ColumnInfo.HtmlTags.Show.isShown %}
-            <th data-field="{{ColumnName}}">{{ColumnInfo.HtmlTags.Show.title}}</th>
+            <th data-field="{{ColumnName}}" data-align="{{ColumnInfo.HtmlTags.Show.align}}">{{ColumnInfo.HtmlTags.Show.title}}</th>
             {% endif %}
             {% endfor %}
         </tr>
-
     </thead>
 </table>
 {% endblock %}
