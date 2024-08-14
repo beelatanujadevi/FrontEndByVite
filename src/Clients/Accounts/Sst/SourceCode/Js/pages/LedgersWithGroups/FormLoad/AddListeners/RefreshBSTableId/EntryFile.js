@@ -1,4 +1,3 @@
-// import { StartFunc as StartFuncFuncToRun } from "./FetchFromFuncs/Entry.js";
 import { StartFunc as StartFuncFuncToRun } from "./ButtonClickFunc.js";
 
 let StartFunc = () => {

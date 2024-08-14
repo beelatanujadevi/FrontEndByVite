@@ -13,27 +13,17 @@
         "title": "Date"
     },
     {
+        "field": "Description",
+        "title": "Description"
+    },
+    {
         "field": "Credit",
-        "title": "Credit"
+        "title": "Credit",
+        "footerFormatter": "totalFormatter"
     },
     {
         "field": "Debit",
-        "title": "Debit"
-    },
-    {
-        "field": "BSGroup",
-        "title": "BSGroup"
-    },
-    {
-        "field": "SubGroup",
-        "title": "SubGroup"
-    },
-    {
-        "field": "AG4 Name",
-        "title": "AG4 Name"
-    },
-    {
-        "field": "AG3 Name",
-        "title": "AG3 Name"
+        "title": "Debit",
+        "footerFormatter": "totalFormatter"
     }
 ]

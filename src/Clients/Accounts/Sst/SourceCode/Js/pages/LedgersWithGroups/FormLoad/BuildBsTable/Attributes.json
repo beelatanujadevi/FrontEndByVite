@@ -3,6 +3,7 @@
         "data-toolbar": "#toolbar",
         "data-search": "true",
         "data-searchable": "true",
-        "data-id-field": "pk"
+        "data-id-field": "pk",
+        "data-show-footer": "true"
     }
 }

@@ -33,6 +33,21 @@
     function jFGlobalSerialColumn(value, row, index) {
         return index + 1;
     };
+
+    function totalFormatter(value, row, index) {
+        var field = this.field;
+        let LocalTotal = jVarGlobalPresentViewData.map(function (row) {
+            console.log("aaaaa : ", row[field]);
+            if (row[field] === undefined) {
+                return 0;
+            };
+            return +row[field];
+        }).reduce(function (sum, i) {
+            return sum + i
+        }, 0);
+
+        return LocalTotal.toFixed(2);
+    };
 </script>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/extensions/export/bootstrap-table-export.min.js"></script>
