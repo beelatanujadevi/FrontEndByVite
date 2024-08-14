@@ -19,11 +19,13 @@
     {
         "field": "Credit",
         "title": "Credit",
+        "align":"right",
         "footerFormatter": "totalFormatter"
     },
     {
         "field": "Debit",
         "title": "Debit",
+        "align":"right",
         "footerFormatter": "totalFormatter"
     }
 ]

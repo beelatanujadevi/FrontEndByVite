@@ -14,11 +14,13 @@
     },
     {
         "field": "Credit",
-        "title": "Credit"
+        "title": "Credit",
+        "align":"right"
     },
     {
         "field": "Debit",
-        "title": "Debit"
+        "title": "Debit",
+        "align":"right"
     },
     {
         "field": "BSGroup",
