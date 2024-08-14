@@ -1,6 +1,6 @@
 {% set title = 'Account Profile' %}
 
-{% extends 'src/AllTables/WithSSR/SubTableSideBar/SourceCode/Masters/login.html' %}
+{% extends 'src/Clients/Students/NiceAdmin/SourceCode/Masters/login.html' %}
 
 {% block content %}
 <div class="container">
@@ -12,7 +12,7 @@
           <div class="d-flex justify-content-center py-4">
             <a href="index.html" class="logo d-flex align-items-center w-auto">
               <img src="assets/img/logo.png" alt="">
-              <span class="d-none d-lg-block">NiceAdmin</span>
+              <span class="d-none d-lg-block">KeshavSoft</span>
             </a>
           </div><!-- End Logo -->
 
@@ -28,22 +28,22 @@
               <form id="FormId" class="row g-3 needs-validation" onsubmit="return false"  novalidate>
                 
                 <div class="col-12">
-                  <label for="yourUsername" class="form-label">User name</label>
+                  <label for="StudentNameId" class="form-label">Name</label>
                   <div class="input-group has-validation">
-                    <input type="text" name="username" class="form-control" id="yourUsername" required>
+                    <input type="text" name="StudentName" class="form-control" id="StudentNameId" required>
                     <div class="invalid-feedback">Please choose a username.</div>
                   </div>
                 </div>
+           
                 <div class="col-12">
-                  <label for="yourEmail" class="form-label">User Email</label>
-                  <input type="email" name="email" class="form-control" id="yourEmail" required>
-                  <div class="invalid-feedback">Please enter a valid Email adddress!</div>
-                </div>
-
-                <div class="col-12">
-                  <label for="yourPassword" class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" id="yourPassword" required>
+                  <label for="MobileId" class="form-label">Mobile</label>
+                  <input type="number" name="Mobile" class="form-control" id="MobileId" required>
                   <div class="invalid-feedback">Please enter your password!</div>
+                </div>
+                <div class="col-12">
+                  <label for="EmailId" class="form-label">User Email</label>
+                  <input type="email" name="Email" class="form-control" id="EmailId" required>
+                  <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                 </div>
 
                 <div class="col-12">

@@ -20,7 +20,8 @@
     "Mag": "vite build --config src/Clients/Garmants/Mag/vite.config.js",
     "mazer": "vite build --config vite.config-mazer.js",
     "Washtex": "vite build --config src/Clients/Laundry/Washtex/vite.config.js",
-    "sst": "vite build --config src/Clients/Accounts/Sst/vite.config.js"
+    "sst": "vite build --config src/Clients/Accounts/Sst/vite.config.js",
+    "students": "vite build --config src/Clients/Students/NiceAdmin/vite.config.js"
   },
   "author": "",
   "license": "ISC",
