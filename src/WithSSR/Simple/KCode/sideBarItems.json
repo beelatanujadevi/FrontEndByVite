@@ -10,6 +10,11 @@
         "icon": "bi bi-plus-circle"
     },
     {
+        "name": "CreateWithMail",
+        "url": "CreateSendEmail.html",
+        "icon": "bi bi-plus-circle"
+    },
+    {
         "name": "CreateCamera",
         "url": "CreateCamera.html",
         "icon": "bi bi-camera-fill"
