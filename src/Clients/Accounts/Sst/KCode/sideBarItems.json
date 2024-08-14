@@ -14,5 +14,22 @@
                 "icon": "bi bi-plus-circle"
             }
         ]
+    },
+    {
+        "name": "Receipts",
+        "key": "Receipts",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "ReceiptsAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "ReceiptsWithGroups.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
     }
+    
 ]

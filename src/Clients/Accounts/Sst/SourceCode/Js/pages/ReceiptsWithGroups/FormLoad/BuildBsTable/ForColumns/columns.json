@@ -1,0 +1,39 @@
+[
+    {
+        "field": "KS-Serial",
+        "title": "#",
+        "formatter": "jFGlobalSerialColumn"
+    },
+    {
+        "field": "AccountName",
+        "title": "AccountName"
+    },
+    {
+        "field": "Date",
+        "title": "Date"
+    },
+    {
+        "field": "Credit",
+        "title": "Credit"
+    },
+    {
+        "field": "Debit",
+        "title": "Debit"
+    },
+    {
+        "field": "BSGroup",
+        "title": "BSGroup"
+    },
+    {
+        "field": "SubGroup",
+        "title": "SubGroup"
+    },
+    {
+        "field": "AG4 Name",
+        "title": "AG4 Name"
+    },
+    {
+        "field": "AG3 Name",
+        "title": "AG3 Name"
+    }
+]
