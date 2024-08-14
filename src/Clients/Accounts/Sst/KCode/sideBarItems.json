@@ -30,6 +30,37 @@
                 "icon": "bi bi-plus-circle"
             }
         ]
+    },
+    {
+        "name": "Ledgers",
+        "key": "Ledgers",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "LedgersAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "LedgersWithGroups.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    },
+    {
+        "name": "DayBooks",
+        "key": "DayBooks",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "DayBooksAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "DayBooksWithGroups.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
     }
-    
 ]
