@@ -25,7 +25,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "OpeningsWithGroups",
+                "name": "ReceiptsWithGroups",
                 "url": "ReceiptsWithGroups.html",
                 "icon": "bi bi-plus-circle"
             }
@@ -41,7 +41,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "OpeningsWithGroups",
+                "name": "LedgersWithGroups",
                 "url": "LedgersWithGroups.html",
                 "icon": "bi bi-plus-circle"
             }
@@ -57,7 +57,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "OpeningsWithGroups",
+                "name": "DayBooksWithGroups",
                 "url": "DayBooksWithGroups.html",
                 "icon": "bi bi-plus-circle"
             }
@@ -73,7 +73,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "OpeningsWithGroups",
+                "name": "AccountsWithGroups",
                 "url": "AccountsWithGroups.html",
                 "icon": "bi bi-plus-circle"
             }
@@ -89,7 +89,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "OpeningsWithGroups",
+                "name": "JournalsWithGroups",
                 "url": "JournalsWithGroups.html",
                 "icon": "bi bi-plus-circle"
             }
@@ -105,7 +105,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "OpeningsWithGroups",
+                "name": "PaymentsWithGroups",
                 "url": "PaymentsWithGroups.html",
                 "icon": "bi bi-plus-circle"
             }
