@@ -1,0 +1,16 @@
+import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
+import UrlJson from "../../../../Config.json" with { type: "json" };
+
+let StartFunc = async () => {
+    let LocalroutePath = UrlJson.routePath;
+    let LocaltableName = jVarGlobalTableName;
+
+    let jVarLocalFetchHeaders = StartFuncFetchHeaders();
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/SendMail`;
+    let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
+
+    return await response;
+};
+
+export { StartFunc };
+
