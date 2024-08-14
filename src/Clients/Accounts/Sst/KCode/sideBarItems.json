@@ -62,5 +62,53 @@
                 "icon": "bi bi-plus-circle"
             }
         ]
+    },
+    {
+        "name": "Accounts",
+        "key": "Accounts",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "AccountsAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "AccountsWithGroups.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    },
+    {
+        "name": "Journals",
+        "key": "Journals",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "JournalsAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "JournalsWithGroups.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    },
+    {
+        "name": "Payments",
+        "key": "Payments",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "PaymentsAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "OpeningsWithGroups",
+                "url": "PaymentsWithGroups.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
     }
 ]
