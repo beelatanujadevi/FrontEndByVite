@@ -41,8 +41,13 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "LedgersWithGroups",
-                "url": "LedgersWithGroups.html",
+                "name": "LedgersAll",
+                "url": "LedgersAll.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "LedgersSingle",
+                "url": "LedgersSingle.html",
                 "icon": "bi bi-plus-circle"
             }
         ]
