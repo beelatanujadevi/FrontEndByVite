@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/Openings/DataOnly`;
+    let jVarLocalFetchUrl = `/bin/Journals/DataOnly`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
