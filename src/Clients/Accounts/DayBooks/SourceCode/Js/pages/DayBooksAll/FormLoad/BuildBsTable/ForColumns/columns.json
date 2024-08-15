@@ -1,0 +1,31 @@
+[
+    {
+        "field": "KS-Serial",
+        "title": "#",
+        "formatter": "jFGlobalSerialColumn"
+    },
+    {
+        "field": "AccountName",
+        "title": "AccountName"
+    },
+    {
+        "field": "Date",
+        "title": "Date"
+    },
+    {
+        "field": "Description",
+        "title": "Description"
+    },
+    {
+        "field": "Credit",
+        "title": "Credit",
+        "align":"right",
+        "footerFormatter": "totalFormatter"
+    },
+    {
+        "field": "Debit",
+        "title": "Debit",
+        "align":"right",
+        "footerFormatter": "totalFormatter"
+    }
+]

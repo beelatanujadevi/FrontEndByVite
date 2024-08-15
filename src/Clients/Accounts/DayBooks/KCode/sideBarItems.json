@@ -1,0 +1,23 @@
+[
+    {
+        "name": "DayBooks",
+        "key": "DayBooks",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "DayBooksAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "DayBooksAll",
+                "url": "DayBooksAll.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Period",
+                "url": "DayBooksSingle.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    }
+]
