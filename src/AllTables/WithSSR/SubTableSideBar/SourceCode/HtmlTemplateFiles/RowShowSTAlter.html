@@ -1,0 +1,66 @@
+{% set title = 'Account Profile' %}
+
+{% extends 'src/AllTables/WithSSR/SubTableSideBar/SourceCode/Masters/hideInPrint.html' %}
+
+{% block content %}
+<div class="pagetitle">
+    <h1 class="d-block d-sm-none">{{tableName}} InsertSubTable</h1>
+    <h1 class="d-none d-sm-block">InsertSubTable</h1>
+    <nav class="d-none d-sm-block">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">{{tableName}}</li>
+            <li class="breadcrumb-item active">InsertSubTable</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<form onsubmit="return false" id="FormId">
+    <div class="row ColumnsRow">
+        {% for ColumnName, ColumnInfo in columnData %}
+        <div class="col-md-12">
+            <label class="col-md-4 col-form-label">{{ColumnInfo.HtmlTags.Create.title}}</label>
+
+            <div class="col-md-8">
+                <input name="{{ColumnName}}" type="text" class="form-control" disabled>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</form>
+
+{% if foreignTablecolumnData %}
+<h1><a href="#" id="BsSubTableRefreshId"></a></h1>
+
+<table id="SubTableId" data-show-footer="true">
+    <thead>
+        <tr>
+            {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
+            {% if ColumnInfo.HtmlTags.SubTable.isShown %}
+            <th data-field="{{ColumnName}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
+            {% endif %}
+            {% endfor %}
+        </tr>
+    </thead>
+
+</table>
+{% endif %}
+
+{% for ColumnName, ColumnInfo in columnData %}
+{% if ColumnInfo.references %}
+<datalist id="{{ColumnInfo.references.model}}DLId"></datalist>
+{% endif %}
+{% endfor %}
+
+{% for ColumnName, ColumnInfo in foreignTablecolumnData %}
+{% if ColumnInfo.references %}
+<datalist id="{{ColumnInfo.references.model}}DLId"></datalist>
+{% endif %}
+{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+<script type="module" src="../Js/pages/{{tableName}}RowShowSTAlter/StartFunc.js"></script>
+
+{% endblock %}
