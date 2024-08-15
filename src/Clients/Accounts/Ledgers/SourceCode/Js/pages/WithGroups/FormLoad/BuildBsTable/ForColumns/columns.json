@@ -1,0 +1,15 @@
+[
+    {
+        "field": "KS-Serial",
+        "title": "#",
+        "formatter": "jFGlobalSerialColumn"
+    },
+    {
+        "field": "AccountName",
+        "title": "AccountName"
+    },
+    {
+        "field": "Date",
+        "title": "Date"
+    }
+]

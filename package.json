@@ -21,7 +21,8 @@
     "mazer": "vite build --config vite.config-mazer.js",
     "Washtex": "vite build --config src/Clients/Laundry/Washtex/vite.config.js",
     "sst": "vite build --config src/Clients/Accounts/Sst/vite.config.js",
-    "students": "vite build --config src/Clients/Students/NiceAdmin/vite.config.js"
+    "students": "vite build --config src/Clients/Students/NiceAdmin/vite.config.js",
+    "Ledgers": "vite build --config src/Clients/Accounts/Ledgers/vite.config.js"
   },
   "author": "",
   "license": "ISC",

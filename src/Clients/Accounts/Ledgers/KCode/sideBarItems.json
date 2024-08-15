@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Ledgers",
+        "key": "Ledgers",
+        "children": [
+            {
+                "name": "AsIs",
+                "url": "LedgersAsIs.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "All",
+                "url": "LedgersAll.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Single",
+                "url": "LedgersSingle.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Interest",
+                "url": "LedgersInterest.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Post",
+                "url": "LedgersPost.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "SingleSelect",
+                "url": "LedgersSingleSelect.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    }
+]
