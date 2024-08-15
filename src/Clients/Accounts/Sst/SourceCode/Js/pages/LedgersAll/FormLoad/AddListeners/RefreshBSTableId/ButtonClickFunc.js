@@ -7,12 +7,16 @@ import { StartFunc as Transfers } from "./Transfers/Entry.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
 let StartFunc = async () => {
-    let [a, b, c, d, e] = await Promise.all([Receipts(), Openings(), Payments(), Journals(), Transfers()]);
-    console.log("aaaaaaaaa : ", e);
+    try {
+        let [a, b, c, d, e] = await Promise.all([Receipts(), Openings(), Payments(), Journals(), Transfers()]);
 
-    jVarGlobalPresentViewData = [...a, ...b, ...c, ...d, ...e];
+        jVarGlobalPresentViewData = [...a, ...b, ...c, ...d, ...e];
 
-    StartFuncAfterFetch();
+        StartFuncAfterFetch();
+    } catch (e) {
+        console.log("error from Promise all : ", e);
+        alert("error from Promise All");
+    };
 };
 
 export { StartFunc }

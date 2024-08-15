@@ -1,5 +1,7 @@
+import urlJson from '../../../../url.json' with {type: 'json'};
+
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/Receipts/DataOnly`;
+    let jVarLocalFetchUrl = `/${urlJson.StartRoute}/Receipts/Show/DataOnly`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
