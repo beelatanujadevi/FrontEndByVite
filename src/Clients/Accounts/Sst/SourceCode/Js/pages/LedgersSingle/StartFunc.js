@@ -1,4 +1,3 @@
-import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 import { StartFunc as StartFuncFormLoad } from "./FormLoad/StartFunc.js";
 
 const StartFunc = () => {
@@ -6,8 +5,6 @@ const StartFunc = () => {
 
     if (jVarLocalFromAdmin) {
         StartFuncFormLoad();
-
-        StartFuncShowOnDom().then();
     };
 };
 

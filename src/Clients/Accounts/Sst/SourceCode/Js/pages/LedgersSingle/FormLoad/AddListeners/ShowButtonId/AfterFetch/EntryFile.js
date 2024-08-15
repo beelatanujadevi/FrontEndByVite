@@ -1,13 +1,13 @@
-let StartFunc = () => {
+let StartFunc = ({ inData }) => {
     var $table = $('#table');
-    let jVarLocalSortByDate = jFLocalSortByDate();
+    let jVarLocalSortByDate = jFLocalSortByDate({ inData });
     let jVarLocalSortByAccountName = jVarLocalSortByDate.sort((a, b) => a.value - b.value);
 
     $table.bootstrapTable("load", jVarLocalSortByAccountName);
 };
 
-const jFLocalSortByDate = () => {
-    return jVarGlobalPresentViewData.sort((a, b) => {
+const jFLocalSortByDate = ({ inData }) => {
+    return inData.sort((a, b) => {
         const nameA = a.Date; // ignore upper and lowercase
         const nameB = b.Date; // ignore upper and lowercase
         if (nameA < nameB) {
