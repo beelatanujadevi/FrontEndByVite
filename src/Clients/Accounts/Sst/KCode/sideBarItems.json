@@ -41,22 +41,22 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "LedgersAll",
+                "name": "All",
                 "url": "LedgersAll.html",
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "LedgersSingle",
+                "name": "Single",
                 "url": "LedgersSingle.html",
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "LedgersInterest",
+                "name": "Interest",
                 "url": "LedgersInterest.html",
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "LedgersSingleSelect",
+                "name": "SingleSelect",
                 "url": "LedgersSingleSelect.html",
                 "icon": "bi bi-plus-circle"
             }
