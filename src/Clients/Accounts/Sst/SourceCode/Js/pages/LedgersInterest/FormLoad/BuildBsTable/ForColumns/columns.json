@@ -5,10 +5,6 @@
         "formatter": "jFGlobalSerialColumn"
     },
     {
-        "field": "AccountName",
-        "title": "AccountName"
-    },
-    {
         "field": "Date",
         "title": "Date"
     },
