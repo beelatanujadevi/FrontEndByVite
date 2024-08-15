@@ -15,13 +15,25 @@
     {
         "field": "Credit",
         "title": "Credit",
-        "align":"right",
+        "align": "right",
         "footerFormatter": "totalFormatter"
     },
     {
         "field": "Debit",
         "title": "Debit",
-        "align":"right",
+        "align": "right",
+        "footerFormatter": "totalFormatter"
+    },
+    {
+        "field": "CreditInterest",
+        "title": "Credit Interest",
+        "align": "right",
+        "footerFormatter": "totalFormatter"
+    },
+    {
+        "field": "DebitInterest",
+        "title": "Debit Interest",
+        "align": "right",
         "footerFormatter": "totalFormatter"
     }
 ]

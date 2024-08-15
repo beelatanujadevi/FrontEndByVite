@@ -23,13 +23,31 @@
     <div class="col-md-12">
         <label class="col-md-4 col-form-label">Account Name</label>
         <div class="col-md-8">
-            <input id="AccountsInputId" type="text" class="form-control" autocomplete="off" list="AccountDLId" required>
+            <input id="AccountsInputId" type="text" class="form-control" autocomplete="off" list="AccountDLId" autofocus
+                value="BOB PIONEER FUNDS">
             <datalist id="AccountDLId"></datalist>
         </div>
+    </div>
 
+    <div class="col-md-12">
+        <label class="col-md-4 col-form-label">Date</label>
+        <div class="col-md-8">
+            <input id="DateInputId" type="date" class="form-control">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <label class="col-md-4 col-form-label">Interest %</label>
+        <div class="col-md-8">
+            <input id="InterestInputId" type="number" class="form-control" value="12">
+        </div>
+    </div>
+
+    <div class="col-md-12">
         <button id="ShowButtonId" class="btn btn-success">Show</button>
     </div>
 </div>
+
 
 <table id="table">
     <thead>
@@ -50,7 +68,7 @@
     function totalFormatter(value, row, index) {
         var field = this.field;
         let LocalTotal = jVarGlobalPresentViewData.map(function (row) {
-            console.log("aaaaa : ", row[field]);
+            
             if (row[field] === undefined) {
                 return 0;
             };
