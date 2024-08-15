@@ -44,7 +44,7 @@
         <tr>
             {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
             {% if ColumnInfo.HtmlTags.SubTable.isShown %}
-            <th data-field="{{ColumnName}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
+            <th data-field="{{ColumnName}}" data-align="{{ColumnInfo.HtmlTags.Show.align}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
             {% endif %}
             {% endfor %}
             <th>Options</th>
