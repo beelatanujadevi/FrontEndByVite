@@ -27,6 +27,7 @@
         </div>
         {% endfor %}
     </div>
+
 </form>
 
 {% if foreignTablecolumnData %}
@@ -37,9 +38,11 @@
         <tr>
             {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
             {% if ColumnInfo.HtmlTags.SubTable.isShown %}
-            <th data-field="{{ColumnName}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
+            <th data-field="{{ColumnName}}" data-align="{{ColumnInfo.HtmlTags.Alter.align}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
             {% endif %}
             {% endfor %}
+            <th data-formatter="jFLocalRowShowDelete">Delete</th>
+
         </tr>
     </thead>
 
@@ -61,6 +64,22 @@
 {% endblock %}
 
 {% block js %}
+<script>
+    function jFGlobalSerialColumn(value, row, index) {
+        return index + 1;
+    };
+
+    function jFLocalRowShowDelete(value, row, index) {
+        return [
+            `<a class="like" href="./${jVarGlobalTableName}RowShowSTAlter.html?inRowPk=${row.pk}" title="Like">`,
+            '<i class="bi bi-trash3"></i>',
+            '</a>  '
+
+
+        ].join('')
+    }
+
+</script>
 <script type="module" src="../Js/pages/{{tableName}}RowShowSTAlter/StartFunc.js"></script>
 
 {% endblock %}
