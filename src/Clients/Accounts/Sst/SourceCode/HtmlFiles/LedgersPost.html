@@ -53,8 +53,11 @@
             <input id="TransferAccountInputId" type="text" class="form-control" autocomplete="off" list="AccountDLId">
         </div>
     </div>
-</div>
 
+    <div class="col-md-12">
+        <button id="PostButtonId" class="btn btn-primary">Post to Transfers</button>
+    </div>
+</div>
 
 <table id="table">
     <thead>
@@ -72,9 +75,9 @@
         return index + 1;
     };
 
-    function totalFormatter(value, row, index) {
+    function totalFormatter(data) {
         var field = this.field;
-        let LocalTotal = jVarGlobalPresentViewData.map(function (row) {
+        let LocalTotal = data.map(function (row) {
 
             if (row[field] === undefined) {
                 return 0;
