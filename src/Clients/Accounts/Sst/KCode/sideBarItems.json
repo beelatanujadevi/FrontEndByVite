@@ -62,8 +62,13 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "DayBooksWithGroups",
-                "url": "DayBooksWithGroups.html",
+                "name": "DayBooksAll",
+                "url": "DayBooksAll.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "DayBooksSingle",
+                "url": "DayBooksSingle.html",
                 "icon": "bi bi-plus-circle"
             }
         ]
