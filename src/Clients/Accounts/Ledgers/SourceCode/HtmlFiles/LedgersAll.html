@@ -34,10 +34,10 @@
         return index + 1;
     };
 
-    function totalFormatter(value, row, index) {
+    function totalFormatter(data) {
         var field = this.field;
-        let LocalTotal = jVarGlobalPresentViewData.map(function (row) {
-            console.log("aaaaa : ", row[field]);
+
+        let LocalTotal = data.map(function (row) {
             if (row[field] === undefined) {
                 return 0;
             };
