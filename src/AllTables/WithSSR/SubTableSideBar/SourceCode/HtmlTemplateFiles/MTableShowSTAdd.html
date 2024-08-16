@@ -26,8 +26,8 @@
             {% for ColumnName, ColumnInfo in columnData %}
             <th data-field="{{ColumnName}}">{{ColumnInfo.HtmlTags.Show.title}}</th>
             {% endfor %}
-            <th data-field="Show" data-formatter="jFLocalRowShow">Show</th>
-            <th data-field="Advance" data-formatter="jFLocalRowAdvance">Alter</th>
+            <th data-field="STAdd" data-formatter="jFLocalSTAdd">STAdd</th>
+            
 
         </tr>
 
@@ -41,27 +41,19 @@
         return index + 1;
     };
 
-    function jFLocalRowShow(value, row, index) {
+    function jFLocalSTAdd(value, row, index) {
         return [
             `<a class="like" href="#" title="Like">`,
-            '<i class="bi bi-arrow-right-square"></i>',
+            '<i class="bi bi-stack"></i>',
             '</a>  '
 
 
         ].join('')
     }
-    function jFLocalRowAdvance(value, row, index) {
-        return [
-            `<a class="like" href="#" title="Like">`,
-            '<i class="bi bi-arrow-right-square"></i>',
-            '</a>  '
-
-
-        ].join('')
-    }
+   
 
 </script>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/extensions/export/bootstrap-table-export.min.js"></script>
-<script type="module" src="../Js/pages/{{tableName}}ShowToSubTableByJs/StartFunc.js"></script>
+<script type="module" src="../Js/pages/{{tableName}}MTableShowSTAdd/StartFunc.js"></script>
 {% endblock %}

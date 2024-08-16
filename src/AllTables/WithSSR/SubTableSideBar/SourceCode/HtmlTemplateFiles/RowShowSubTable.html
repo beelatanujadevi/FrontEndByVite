@@ -37,7 +37,7 @@
         <tr>
             {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
             {% if ColumnInfo.HtmlTags.SubTable.isShown %}
-            <th data-field="{{ColumnName}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
+            <th data-field="{{ColumnName}}" data-footer-formatter="{{ColumnInfo.HtmlTags.Show.footerFormatter}}">{{ColumnInfo.HtmlTags.SubTable.title}}</th>
             {% endif %}
             {% endfor %}
         </tr>
@@ -61,6 +61,20 @@
 {% endblock %}
 
 {% block js %}
+    
+<script>
+    let jVarGlobalPresentViewData;
+     function totalFormatter(value, row, index) {
+        var field = this.field
+        return jVarGlobalPresentViewData.map(function (row) {
+            console.log(row);
+            
+            return +row[field];
+        }).reduce(function (sum, i) {
+            return sum + i
+        }, 0)
+    };
+</script>
 <script type="module" src="../Js/pages/{{tableName}}RowShowSubTable/StartFunc.js"></script>
 
 {% endblock %}
