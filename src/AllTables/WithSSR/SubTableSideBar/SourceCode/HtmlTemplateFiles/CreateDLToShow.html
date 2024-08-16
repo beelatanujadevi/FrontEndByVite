@@ -30,7 +30,10 @@
                                 list="{{ColumnInfo.references.model}}DLId" {{ColumnInfo.HtmlTags.Create.RequiredTag}}
                                 {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
                             {% else %}
-
+                            {% if ColumnInfo.type === "CHECKBOX" %}
+                            <input name="{{ColumnName}}" type="checkbox" class="form-control" autocomplete="off"
+                                {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                            {% endif %}
                             {% if ColumnInfo.type === "DATEONLY" %}
                             <input name="{{ColumnName}}" type="date" class="form-control" autocomplete="off"
                                 {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
