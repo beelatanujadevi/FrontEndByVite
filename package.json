@@ -23,7 +23,9 @@
     "sst": "vite build --config src/Clients/Accounts/Sst/vite.config.js",
     "students": "vite build --config src/Clients/Students/NiceAdmin/vite.config.js",
     "Ledgers": "vite build --config src/Clients/Accounts/Ledgers/vite.config.js",
-    "DayBooks": "vite build --config src/Clients/Accounts/DayBooks/vite.config.js"
+    "DayBooks": "vite build --config src/Clients/Accounts/DayBooks/vite.config.js",
+    "TrailBalance": "vite build --config src/Clients/Accounts/TrailBalance/vite.config.js"
+
 
   },
   "author": "",
