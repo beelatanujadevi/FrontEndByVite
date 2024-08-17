@@ -51,7 +51,8 @@ let jFLocalGroupData = ({ inData }) => {
         jVarLocalCollection.push({
             AccountName: key,
             Credit: jVarLoopInsideCredits,
-            Debit: jVarLoopInsideDebits
+            Debit: jVarLoopInsideDebits,
+            Balance: jVarLoopInsideCredits - jVarLoopInsideDebits
         });
     };
 
