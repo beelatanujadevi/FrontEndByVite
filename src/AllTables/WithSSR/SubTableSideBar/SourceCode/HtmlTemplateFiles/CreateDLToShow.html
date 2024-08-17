@@ -38,36 +38,46 @@
                             </div>
                             {% endif %}
 
-                            {% if ColumnInfo.type === "DATEONLY" %}
-                            <input name="{{ColumnName}}" type="date" class="form-control" autocomplete="off"
-                                {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
-                            {% endif %}
-                            {% if ColumnInfo.type === "MONTH" %}
-                            <input name="{{ColumnName}}" type="month" class="form-control" autocomplete="off"
-                                {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
-                            {% endif %}
-                            {% if ColumnInfo.type === "STRING" %}
-                            <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
-                                {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
-                            {% endif %}
+                            {% if ColumnInfo.type === "CHECKBOX" %}
+                            <div class="col-md-12">
 
-                            {% if ColumnInfo.type === "NUMBER" %}
-                            <input name="{{ColumnName}}" type="number" class="form-control" autocomplete="off"
-                                {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
-                            {% endif %}
-                            {% endif %}
-                            <div class="invalid-feedback">
-                                {% if ColumnInfo.HtmlTags.Create.BS5.ErrorText %}
-                                {{ColumnInfo.HtmlTags.Create.BS5.ErrorText}}
-                                {% else %}
-                                {{ColumnName}} Should not be empty!!
-                                {% endif %}
+                                <div class="form-check">
+                                    <input name="{{ColumnName}}" class="form-check-input" type="checkbox"
+                                        id="customCheck1">
+                                </div>
                             </div>
                         </div>
+
+                        {% endif %}
+                        {% if ColumnInfo.type === "DATEONLY" %}
+                        <input name="{{ColumnName}}" type="date" class="form-control" autocomplete="off"
+                            {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                        {% endif %}
+                        {% if ColumnInfo.type === "MONTH" %}
+                        <input name="{{ColumnName}}" type="month" class="form-control" autocomplete="off"
+                            {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                        {% endif %}
+                        {% if ColumnInfo.type === "STRING" %}
+                        <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
+                            {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                        {% endif %}
+
+                        {% if ColumnInfo.type === "NUMBER" %}
+                        <input name="{{ColumnName}}" type="number" class="form-control" autocomplete="off"
+                            {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                        {% endif %}
+                        {% endif %}
+                        <div class="invalid-feedback">
+                            {% if ColumnInfo.HtmlTags.Create.BS5.ErrorText %}
+                            {{ColumnInfo.HtmlTags.Create.BS5.ErrorText}}
+                            {% else %}
+                            {{ColumnName}} Should not be empty!!
+                            {% endif %}
+                        </div>
                     </div>
-                    {% endif %}
-                    {% endfor %}
                 </div>
+                {% endif %}
+                {% endfor %}
                 <div class="row mt-3">
                     <div class="col-sm-10">
                         <button id="SaveButtonId" class="btn btn-primary">Save</button>
