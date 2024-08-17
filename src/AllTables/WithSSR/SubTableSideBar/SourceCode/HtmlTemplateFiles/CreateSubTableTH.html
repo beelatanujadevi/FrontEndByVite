@@ -1,0 +1,156 @@
+{% set title = 'Account Profile' %}
+
+{% extends 'src/AllTables/WithSSR/SubTableSideBar/SourceCode/Masters/withSubTable.html' %}
+
+
+{% block content %}
+<div class="pagetitle">
+    <h1 class="d-block d-sm-none">{{tableName}} InsertSubTable</h1>
+    <h1 class="d-none d-sm-block">InsertSubTable</h1>
+    <nav class="d-none d-sm-block">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">{{tableName}}</li>
+            <li class="breadcrumb-item active">InsertSubTable</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<form onsubmit="return false" id="FormId">
+    <div class="row ColumnsRow">
+        {% for ColumnName, ColumnInfo in columnData %}
+
+        {% if ColumnInfo.HtmlTags.Alter.isShown %}
+
+        <div class="col-md-12">
+            <label class="col-md-4 col-form-label">{{ColumnInfo.HtmlTags.Create.title}}</label>
+
+            <div class="col-md-8">
+                <input name="{{ColumnName}}" type="text" class="form-control" disabled>
+            </div>
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+    </div>
+</form>
+
+{% if foreignTablecolumnData %}
+<h1><a href="#" id="BsSubTableRefreshId"></a></h1>
+
+<table id="SubTableId" data-show-footer="true">
+    <thead>
+        <tr>
+            <th>#</th>
+
+            {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
+            {% if ColumnInfo.HtmlTags.SubTable.isShown %}
+            <th>{{ColumnInfo.HtmlTags.SubTable.title}}</th>
+            {% endif %}
+            {% endfor %}
+            <th>Options</th>
+        </tr>
+        <tr id="tableFooterId">
+            <th></th>
+            {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
+            {% if ColumnInfo.HtmlTags.SubTable.isShown %}
+            {% if ColumnInfo.references %}
+            <th>
+                <input name="{{ColumnName}}" type="text" class="form-control" autocomplete="off"
+                    list="{{ColumnInfo.references.model}}DLId" {{ColumnInfo.HtmlTags.CreateInFooter.RequiredTag}}
+                    {{ColumnInfo.HtmlTags.CreateInFooter.AutoFocusTag}}>
+            </th>
+            {% else %}
+            {% if ColumnInfo.HtmlTags.SubTable.isClientEval %}
+            <th>
+                <input name="{{ColumnName}}" type="{{'STRING' if (ColumnInfo.type == 'STRING') else 'number'}}"
+                    class="form-control" autocomplete="off" list="{{ColumnInfo.HtmlTags.CreateInFooter.ListId}}"
+                    {{ColumnInfo.HtmlTags.CreateInFooter.RequiredTag}}
+                    {{ColumnInfo.HtmlTags.CreateInFooter.AutoFocusTag}}
+                    data-ksclienteval="{{ColumnInfo.HtmlTags.SubTable.ClientEvalString}}">
+            </th>
+            {% else %}
+            {% if (ColumnInfo.type === "INTEGER") or (ColumnInfo.type === "STRING") %}
+            <th>
+                <input name="{{ColumnName}}" type="{{'STRING' if (ColumnInfo.type == 'STRING') else 'number'}}"
+                    class="form-control" autocomplete="off" list="{{ColumnInfo.HtmlTags.CreateInFooter.ListId}}"
+                    {{ColumnInfo.HtmlTags.CreateInFooter.RequiredTag}}
+                    {{ColumnInfo.HtmlTags.CreateInFooter.AutoFocusTag}}>
+            </th>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            <th>
+                <button class="btn btn-outline-success" type="button" id="SubTableFooterSaveButtonId">Save</button>
+            </th>
+        </tr>
+
+        <tr>
+            <th data-formatter="jFGlobalSerialColumn"></th>
+
+            {% for ColumnName, ColumnInfo in foreignTablecolumnData %}
+            {% if ColumnInfo.HtmlTags.SubTable.isShown %}
+            <th data-field="{{ColumnName}}" data-align="{{ColumnInfo.HtmlTags.Show.align}}"
+                data-footer-formatter="{{ColumnInfo.HtmlTags.Show.footerFormatter}}"></th>
+            {% endif %}
+            {% endfor %}
+            <th data-field="KS-Delete" data-formatter="jFLocalRowShowDelete"></th>
+
+        </tr>
+    </thead>
+
+</table>
+{% endif %}
+
+{% for ColumnName, ColumnInfo in columnData %}
+{% if ColumnInfo.references %}
+<datalist id="{{ColumnInfo.references.model}}DLId"></datalist>
+{% endif %}
+{% endfor %}
+
+{% for ColumnName, ColumnInfo in foreignTablecolumnData %}
+{% if ColumnInfo.references %}
+<datalist id="{{ColumnInfo.references.model}}DLId"></datalist>
+{% endif %}
+{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+<script>
+    function jFGlobalSerialColumn(value, row, index, field) {
+       
+        const totalRows = $('#SubTableId').bootstrapTable('getData').length;
+        return totalRows - index;
+    }
+
+    function jFLocalRowShowDelete(value, row, index) {
+        return [
+            `<a class="like" href="#" title="Delete">`,
+            '<i class="bi bi-trash3"></i>',
+            '</a>  '
+
+
+        ].join('')
+    }
+    function totalFormatter(data, i1, i2) {
+        let k1 = $(i1).parent();
+        var field = this.field
+        if (!field) {
+            field = 0;
+        }
+        return '₹' + data.map(function (row) {
+            return +row[field]
+        }).reduce(function (sum, i) {
+            return sum + i
+        }, 0)
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="module" src="../Js/pages/{{tableName}}CreateSubTableTH/StartFunc.js"></script>
+
+{% endblock %}
