@@ -32,7 +32,7 @@
             <input id="ToDateInputId" type="date" class="form-control">
         </div>
     </div>
- 
+
     <div class="col-md-12">
         <button id="ShowButtonId" class="btn btn-success">Show</button>
     </div>
@@ -55,10 +55,10 @@
         return index + 1;
     };
 
-    function totalFormatter(value, row, index) {
+    function totalFormatter(data) {
         var field = this.field;
-        let LocalTotal = jVarGlobalPresentViewData.map(function (row) {
-            
+
+        let LocalTotal = data.map(function (row) {
             if (row[field] === undefined) {
                 return 0;
             };
