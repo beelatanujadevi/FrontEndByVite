@@ -5,27 +5,25 @@
         "formatter": "jFGlobalSerialColumn"
     },
     {
-        "field": "Date",
-        "title": "Date"
-    },
-    {
         "field": "AccountName",
         "title": "AccountName"
     },
     {
-        "field": "Description",
-        "title": "Description"
-    },
-    {
         "field": "Credit",
         "title": "Credit",
-        "align":"right",
+        "align": "right",
         "footerFormatter": "totalFormatter"
     },
     {
         "field": "Debit",
         "title": "Debit",
-        "align":"right",
+        "align": "right",
+        "footerFormatter": "totalFormatter"
+    },
+    {
+        "field": "Balance",
+        "title": "Balance",
+        "align": "right",
         "footerFormatter": "totalFormatter"
     }
 ]
