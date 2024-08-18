@@ -93,8 +93,18 @@
         "key": "TrailBalance",
         "children": [
             {
-                "name": "Period",
+                "name": "Single",
                 "url": "TrailBalanceSingle.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Period",
+                "url": "TrailBalancePeriod.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Print",
+                "url": "TrailBalancePrint.html",
                 "icon": "bi bi-plus-circle"
             }
         ]

@@ -1,8 +1,9 @@
 {
-    "data-toolbar": "#toolbar",
-    "data-search": "true",
-    "data-searchable": "true",
-    "data-show-footer": "true",
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "showFooter": "true",
+    "showPrint": "true",
     "data": [],
     "columns": [
         {
@@ -23,12 +24,6 @@
         {
             "field": "Debit",
             "title": "Debit",
-            "align": "right",
-            "footerFormatter": "totalFormatter"
-        },
-        {
-            "field": "Balance",
-            "title": "Balance",
             "align": "right",
             "footerFormatter": "totalFormatter"
         }
