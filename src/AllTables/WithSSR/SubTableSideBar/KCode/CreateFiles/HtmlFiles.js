@@ -21,16 +21,17 @@ const StartFunc = ({ inSrcPath, inSourceFolderName }) => {
 
     if (!fs.existsSync(root)) {
         fs.mkdirSync(root);
-    }
+    } else {
+        fs.rmSync(root, { recursive: true });
+        fs.mkdirSync(root);
+    };
 
     let TableNamesAsArray = GetTableNames();
     let LocalHtmlFiles = LocalFuncGetFiles({ inSrcPath, inSourceFolderName });
-    // console.log("LocalHtmlFiles : ", LocalHtmlFiles, root);
+
     TableNamesAsArray.forEach(LoopTableName => {
         for (const [key, value] of Object.entries(LocalHtmlFiles)) {
             let LocalFileData = fs.readFileSync(value, "utf8");
-            console.log("LocalFileData : ", key, CommonHtmlFiles);
-            // if (key === "index") {
 
             if (CommonHtmlFiles.includes(key)) {
                 fs.writeFileSync(`${root}/${key}.html`, LocalFileData);
