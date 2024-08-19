@@ -19,28 +19,27 @@
     <span class="visually-hidden">Loading...</span>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group row align-items-centerv">
-            <label for="FromDateInputId" class="col-md-4 col-form-label text-right">From Date</label>
-            <div class="col-md-8">
-                <input id="FromDateInputId" type="date" class="form-control">
-            </div>
+<div class="row ">
+    <div class="col-md-3">
+        <label class="col-md-4 col-form-label">From Date</label>
+        <div class="col-md-8">
+            <input id="FromDateInputId" type="date" class="form-control">
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="form-group row align-items-center">
-            <label for="ToDateInputId" class="col-md-4 col-form-label text-right">To Date</label>
-            <div class="col-md-8">
-                <input id="ToDateInputId" type="date" class="form-control">
-            </div>
+    <div class="col-md-3">
+        <label class="col-md-4 col-form-label">To Date</label>
+        <div class="col-md-8">
+            <input id="ToDateInputId" type="date" class="form-control">
         </div>
     </div>
-    <div class="col-md-4 d-flex align-items-center justify-content-start" >
-        <button id="ShowButtonId" class="btn btn-success">Show</button>
+
+    <div class="col-md-3" style="margin-top: 38px; position: relative; left: -80px;">
+        <!-- <label class="col-md-4 col-form-label">To Date</label> -->
+        <div class="col-md-8 mt-auto">
+            <button id="ShowButtonId" class="btn btn-success">Show</button>
+        </div>
     </div>
 </div>
-
 
 <table id="table">
 </table>
@@ -69,5 +68,5 @@
 </script>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/extensions/export/bootstrap-table-export.min.js"></script>
-<script type="module" src="../Js/pages/TrailBalancePeriod/StartFunc.js"></script>
+<script type="module" src="../Js/pages/TrailBalancePrint/StartFunc.js"></script>
 {% endblock %}
