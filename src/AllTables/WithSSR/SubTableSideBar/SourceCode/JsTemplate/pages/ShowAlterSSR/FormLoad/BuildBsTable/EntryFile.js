@@ -1,19 +1,14 @@
-import { StartFunc as StartFuncTableTag } from "./TableTag.js";
 import { StartFunc as StartFuncOnClickRowFunc } from "./onClickRow/EntryFile.js";
+import optionsJson from './options.json' with {type: 'json'};
 
 const StartFunc = () => {
-    StartFuncTableTag();
     jFLocalInitialize().then();
 };
+optionsJson.onClickRow = StartFuncOnClickRowFunc
 
 const jFLocalInitialize = async () => {
     var $table = $('#table');
-
-    $table.bootstrapTable({
-        data: [],
-        onClickRow: StartFuncOnClickRowFunc
-
-    });
+    $table.bootstrapTable(optionsJson);
 };
 
 export { StartFunc };
