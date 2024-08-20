@@ -1,0 +1,44 @@
+{
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "showFooter": "true",
+    "showPrint": "true",
+    "data": [],
+    "onClickRow": "",
+    "columns": [
+        {
+            "field": "KS-Serial",
+            "title": "#",
+            "formatter": "jFGlobalSerialColumn"
+        },
+        {
+            "field": "QrCode",
+            "title": "QrCode"
+        },
+        {
+            "field": "ProductName",
+            "title": "ProductName"
+        },
+        {
+            "field": "CostPrice",
+            "title": "CostPrice"
+        },
+        {
+            "field": "PercentageValueAddition",
+            "title": "PVAddition"
+        },
+        {
+            "field": "SalePrice",
+            "title": "SalePrice"
+        },
+        {
+            "field": "SupplierName",
+            "title": "SupplierName"
+        },
+        {
+            "field": "DateTime",
+            "title": "DateTime"
+        }
+    ]
+}

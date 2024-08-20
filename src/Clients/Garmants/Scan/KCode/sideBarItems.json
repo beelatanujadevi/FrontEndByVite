@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Scan",
+        "key": "Scan",
+        "children": [
+            {
+                "name": "Create",
+                "url": "CreateSingle.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "ShowAlterSSR",
+                "url": "ShowAlterSSR.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Reports",
+                "url": "Reports.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    }
+]
