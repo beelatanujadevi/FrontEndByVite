@@ -5,7 +5,8 @@
         "Content-Type": "application/json"
     },
     "body": {
-        "UserName": "",
-        "Password": ""
+        "StudentName": "",
+        "Mobile": "",
+        "Email": ""
     }
 }
