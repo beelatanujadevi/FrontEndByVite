@@ -1,0 +1,67 @@
+{% set title = 'Account Profile' %}
+{% extends 'src/Clients/Garmants/Scan/SourceCode/Masters/withSubTable.html' %}
+
+{% block content %}
+<div class="pagetitle">
+    <h1 class="d-block d-sm-none">{{tableName}} InsertSubTable</h1>
+    <h1 class="d-none d-sm-block">InsertSubTable</h1>
+    <nav class="d-none d-sm-block">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">{{tableName}}</li>
+            <li class="breadcrumb-item active">InsertSubTable</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<form onsubmit="return false" id="FormId">
+    <div class="row ColumnsRow">
+        <div class="col-md-12">
+            <label class="col-md-4 col-form-label">Date</label>
+
+            <div class="col-md-8">
+                <input name="Date" type="text" class="form-control" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <label class="col-md-4 col-form-label">Discription</label>
+
+        <div class="col-md-8">
+            <input name="Discription" type="text" class="form-control" disabled>
+        </div>
+    </div>
+    </div>
+</form>
+
+<h1><a href="#" id="BsSubTableRefreshId"></a></h1>
+
+<table id="SubTableId">
+
+</table>
+{% endblock %}
+
+{% block js %}
+
+<script>
+    function jFGlobalSerialColumn(value, row, index) {
+        return index + 1;
+    };
+</script>
+
+<script>
+    let jVarGlobalPresentViewData;
+    function totalFormatter(value, row, index) {
+        var field = this.field
+        return jVarGlobalPresentViewData.map(function (row) {
+            console.log(row);
+
+            return +row[field];
+        }).reduce(function (sum, i) {
+            return sum + i
+        }, 0)
+    };
+</script>
+<script type="module" src="../Js/pages/RowShowSubTable/StartFunc.js"></script>
+
+{% endblock %}

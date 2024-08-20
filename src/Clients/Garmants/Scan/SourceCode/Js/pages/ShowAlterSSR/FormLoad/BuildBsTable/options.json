@@ -1,0 +1,34 @@
+{
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "showFooter": "true",
+    "showPrint": "true",
+    "data": [],
+    "onClickRow": "",
+    "columns": [
+        {
+            "field": "KS-Serial",
+            "title": "#",
+            "formatter": "jFGlobalSerialColumn"
+        },
+        {
+            "field": "Date",
+            "title": "Date"
+        },
+        {
+            "field": "Discription",
+            "title": "Discription"
+        },
+        {
+            "field": "Scan",
+            "title": "Scan",
+            "formatter": "jFLocalRowScan"
+        },
+        {
+            "field": "Show",
+            "title": "Show",
+            "formatter": "jFLocalRowShow"
+        }
+    ]
+}
