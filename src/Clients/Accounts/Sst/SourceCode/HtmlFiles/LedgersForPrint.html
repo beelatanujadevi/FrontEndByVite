@@ -1,6 +1,6 @@
 {% set title = 'Account Profile' %}
 
-{% extends 'src/Clients/Accounts/Sst/SourceCode/Masters/withSubTable.html' %}
+{% extends 'src/Clients/Accounts/Sst/SourceCode/Masters/hideInPrint.html' %}
 
 {% block content %}
 <div class="pagetitle">
@@ -46,6 +46,7 @@
 {% block js %}
 <script>
     function jFGlobalSerialColumn(value, row, index) {
+    
         return index + 1;
     };
 
@@ -66,5 +67,5 @@
 </script>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/extensions/export/bootstrap-table-export.min.js"></script>
-<script type="module" src="../Js/pages/LedgersSingle/StartFunc.js"></script>
+<script type="module" src="../Js/pages/LedgersForPrint/StartFunc.js"></script>
 {% endblock %}
