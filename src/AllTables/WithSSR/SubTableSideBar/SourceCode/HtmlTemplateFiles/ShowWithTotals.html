@@ -24,7 +24,7 @@
             <th data-formatter="jFGlobalSerialColumn">#</th>
             {% for ColumnName, ColumnInfo in columnData %}
             {% if ColumnInfo.HtmlTags.Show.isShown %}
-            <th data-field="{{ColumnName}}" data-footer-formatter="{{ColumnInfo.HtmlTags.Show.footerFormatter}}">
+            <th data-field="{{ColumnName}}" data-align="{{ColumnInfo.HtmlTags.Show.align}}" data-footer-formatter="{{ColumnInfo.HtmlTags.Show.footerFormatter}}">
                 {{ColumnInfo.HtmlTags.Show.title}}</th>
             {% endif %}
             {% endfor %}
