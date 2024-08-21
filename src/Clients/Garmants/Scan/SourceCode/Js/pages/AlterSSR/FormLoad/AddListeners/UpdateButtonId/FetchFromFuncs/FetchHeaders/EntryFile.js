@@ -22,7 +22,8 @@ function jFLocalserializeFormData(form) {
             serializedData[name] = value;
         }
     }
-    serializedData.RefPK =  getUrlQueryParams({ inGetKey: "inRowPk" });;
+    serializedData.RefPK = getUrlQueryParams({ inGetKey: "inRowPk" });;
+    serializedData.QrCode = parseInt(serializedData.QrCode.split('-')[1])
 
     return serializedData;
 };

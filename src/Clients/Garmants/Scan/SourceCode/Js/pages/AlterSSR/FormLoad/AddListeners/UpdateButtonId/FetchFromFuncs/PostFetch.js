@@ -9,9 +9,8 @@ let StartFunc = async () => {
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
     let jVarLocalFetchUrl = `/${LocalroutePath}/Scan`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
-    let data = await response.json();
 
-    return await data;
+    return await response;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
