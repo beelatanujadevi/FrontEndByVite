@@ -8,7 +8,7 @@ let StartFunc = () => {
     jVarLocalKeys.body.StudentName = jFLocalStudentNameId();
     jVarLocalKeys.body.Mobile = jFLocalMobileId();
     jVarLocalKeys.body.Email = jFLocalEmailId();
-    jVarLocalKeys.body = JSON.stringify(jVarLocalKeys.body);
+    jVarLocalKeys.body = JSON.stringify(KeysJson.body);
 
     return jVarLocalKeys;
 };

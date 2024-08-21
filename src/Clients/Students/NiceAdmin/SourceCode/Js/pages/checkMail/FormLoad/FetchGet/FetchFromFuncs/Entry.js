@@ -12,22 +12,7 @@ let StartFunc = async () => {
             let jVarLocalFetchData = await jVarLocalFromFetch.json();
             StartFuncAfterFetch({ inFetchData: jVarLocalFetchData });
         };
-
-        if (jVarLocalFromFetch.status === 500) {
-            myFunction();
-            // alert("You are already Registered...");
-        };
     };
-};
-
-function myFunction() {
-    var txt;
-    if (confirm("Already Registered, Call")) {
-        var url = "tel:+91-984-816-3021";
-        var win = window.open(url, '_blank');  ///similar to above solution
-        win.focus();
-    };
-    // document.getElementById("demo").innerHTML = txt;
 };
 
 export { StartFunc }
