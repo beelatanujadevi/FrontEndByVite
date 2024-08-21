@@ -13,19 +13,23 @@
         "title": "Date"
     },
     {
+        "field": "VouherName",
+        "title": "VouherName"
+    },
+    {
         "field": "Description",
         "title": "Description"
     },
     {
         "field": "Credit",
         "title": "Credit",
-        "align":"right",
+        "align": "right",
         "footerFormatter": "totalFormatter"
     },
     {
         "field": "Debit",
         "title": "Debit",
-        "align":"right",
+        "align": "right",
         "footerFormatter": "totalFormatter"
     }
 ]
