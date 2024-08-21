@@ -1,16 +1,9 @@
-import { StartFunc as StartFuncTableTag } from "./TableTag.js";
+import optionsJson from './options.json' with {type: 'json'};
 
 const StartFunc = () => {
-    StartFuncTableTag();
-    jFLocalInitialize().then();
-};
-
-const jFLocalInitialize = async () => {
     var $table = $('#table');
 
-    $table.bootstrapTable({
-        data: []
-    });
+    $table.bootstrapTable(optionsJson);
 };
 
 export { StartFunc };
