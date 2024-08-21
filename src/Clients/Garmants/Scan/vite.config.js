@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const SourceFolderName = "SourceCode";
 const SrcFolder = "src/Clients/Garmants/Scan";
 
-const FrontEndDistFolder = "publicDir/Garmants";
+const FrontEndDistFolder = "publicDir/Scan";
 
 const root = resolve(__dirname, `${SrcFolder}/${SourceFolderName}`);
 
