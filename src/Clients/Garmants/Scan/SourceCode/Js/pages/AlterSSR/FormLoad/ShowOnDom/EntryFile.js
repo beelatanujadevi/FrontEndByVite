@@ -2,10 +2,11 @@ import { StartFunc as ForData } from "./ForData/EntryFile.js";
 
 const StartFunc = async () => {
     let jVarLocalQrCodeID = document.getElementById("QrCodeID");
-    jVarLocalQrCodeID.addEventListener("keydown", function (event) {
+    jVarLocalQrCodeID.addEventListener("keydown", async function (event) {
         if (event.key === 'Enter') {
             event.preventDefault();
-            LocalFunc();
+            await LocalFunc();
+            SaveFunc();
         }
     })
 };
@@ -26,5 +27,11 @@ const jFLocalShowInInputs = ({ inDataAsObject }) => {
         };
     });
 };
+
+const SaveFunc = () => {
+    let jVarLocalRefreshBSTableId = document.getElementById("UpdateButtonId");
+    jVarLocalRefreshBSTableId.click()
+
+}
 
 export { StartFunc };

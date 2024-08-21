@@ -5,17 +5,17 @@
         "children": [
             {
                 "name": "Create",
-                "url": "CreateSingle.html",
+                "url": "ScanCreateSingle.html",
                 "icon": "bi bi-plus-circle"
             },
             {
                 "name": "ShowAlterSSR",
-                "url": "ShowAlterSSR.html",
+                "url": "ScanShowAlterSSR.html",
                 "icon": "bi bi-plus-circle"
             },
             {
                 "name": "Reports",
-                "url": "Reports.html",
+                "url": "ScanReports.html",
                 "icon": "bi bi-plus-circle"
             }
         ]
