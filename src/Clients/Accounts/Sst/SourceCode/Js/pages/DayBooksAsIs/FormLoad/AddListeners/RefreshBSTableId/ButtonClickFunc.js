@@ -1,12 +1,22 @@
-let StartFunc = () => {
-    jFLocalHideSpinner();
-    var $table = $('#table');
-    $table.bootstrapTable();
-};
+import { StartFunc as Receipts } from "./Receipts/Entry.js";
+import { StartFunc as Openings } from "./Openings/Entry.js";
+import { StartFunc as Payments } from "./Payments/Entry.js";
+import { StartFunc as Journals } from "./Journals/Entry.js";
+import { StartFunc as Transfers } from "./Transfers/Entry.js";
 
-let jFLocalHideSpinner = () => {
-    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
-    jVarLocalSpinnerId.style.display = "none";
+import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
+
+let StartFunc = async () => {
+    try {
+        let [a, b, c, d, e] = await Promise.all([Receipts(), Openings(), Payments(), Journals(), Transfers()]);
+
+        jVarGlobalPresentViewData = [...a, ...b, ...c, ...d, ...e];
+
+        StartFuncAfterFetch();
+    } catch (e) {
+        console.log("error from Promise all : ", e);
+        alert("error from Promise All");
+    };
 };
 
 export { StartFunc }
