@@ -7,14 +7,13 @@ let StartFunc = async () => {
         let jVarLocalJsonData = await jVarLocalDataNeeded.json();
         let jVarLocalNewData = jFLocalShowAmounts({ inData: jVarLocalJsonData });
 
-     
         return jFLocalAddVoucherName({ inData: jVarLocalNewData });
-
     };
 };
+
 const jFLocalAddVoucherName = ({ inData }) => {
     let jVarLocalWithVoucherName = inData.map(element => {
-        element.VouherName = "Journals";
+        element.VouherName = "Transfers";
         return element;
     });
 

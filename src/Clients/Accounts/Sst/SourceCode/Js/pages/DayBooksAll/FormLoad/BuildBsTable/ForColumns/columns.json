@@ -13,6 +13,10 @@
         "title": "Date"
     },
     {
+        "field": "VouherName",
+        "title": "VouherName"
+    },
+    {
         "field": "Description",
         "title": "Description"
     },
