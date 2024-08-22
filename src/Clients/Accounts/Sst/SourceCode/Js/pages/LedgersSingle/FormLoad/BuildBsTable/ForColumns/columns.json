@@ -13,6 +13,10 @@
         "title": "Description"
     },
     {
+        "field": "VouherName",
+        "title": "VouherName"
+    },
+    {
         "field": "Credit",
         "title": "Credit",
         "align":"right",

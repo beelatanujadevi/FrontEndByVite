@@ -4,20 +4,17 @@ let StartFunc = async () => {
     let jVarLocalDataNeeded = await StartFuncFetchFuncs();
 
     if (jVarLocalDataNeeded.status === 200) {
-        return await jVarLocalDataNeeded.json();
+        return jFLocalAddVoucherName({ inData: await jVarLocalDataNeeded.json() });
     };
 };
 
-const jFLocalShowAmounts = ({ inData }) => {
-    let jFLocalNewData = inData.map(element => {
-        if (element.Amount > 0) {
-            element.Credit = element.Amount;
-        } else {
-            element.Debit = element.Amount;
-        };
-
+const jFLocalAddVoucherName = ({ inData }) => {
+    let jVarLocalWithVoucherName = inData.map(element => {
+        element.VouherName = "Journals";
         return element;
     });
+
+    return jVarLocalWithVoucherName;
 };
 
 export { StartFunc }
