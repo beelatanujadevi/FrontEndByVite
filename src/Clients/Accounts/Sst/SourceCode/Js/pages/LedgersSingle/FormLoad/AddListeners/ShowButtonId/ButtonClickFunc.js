@@ -2,14 +2,16 @@ import { StartFunc as Receipts } from "./Receipts/Entry.js";
 import { StartFunc as Openings } from "./Openings/Entry.js";
 import { StartFunc as Payments } from "./Payments/Entry.js";
 import { StartFunc as Journals } from "./Journals/Entry.js";
+import { StartFunc as Transfers } from "./Transfers/Entry.js";
+
 
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 const CommonAccountNameSelected = document.getElementById("AccountsInputId");
 
 let StartFunc = async () => {
-    let [a, b, c, d] = await Promise.all([Receipts(), Openings(), Payments(), Journals()]);
+    let [a, b, c, d, e] = await Promise.all([Receipts(), Openings(), Payments(), Journals(), Transfers()]);
 
-    jVarGlobalPresentViewData = [...a, ...b, ...c, ...d];
+    jVarGlobalPresentViewData = [...a, ...b, ...c, ...d, ...e];
 
     const arrByID = jVarGlobalPresentViewData.filter(filterByAccountName);
 
