@@ -10,7 +10,7 @@ let StartFunc = async () => {
 
         if (jVarLocalFromFetch.status === 200) {
             let jVarLocalFetchData = await jVarLocalFromFetch.json();
-            StartFuncAfterFetch({ inFetchData: jVarLocalFetchData });
+            StartFuncAfterFetch();
         };
 
         if (jVarLocalFromFetch.status === 500) {
