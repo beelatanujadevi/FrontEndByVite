@@ -1,0 +1,38 @@
+{
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "showFooter": "true",
+    "data": [],
+    "columns": [
+        {
+            "field": "KS-Serial",
+            "title": "#",
+            "formatter": "jFGlobalSerialColumn"
+        },
+        {
+            "field": "Date",
+            "title": "Date"
+        },
+        {
+            "field": "Description",
+            "title": "Description"
+        },
+        {
+            "field": "VouherName",
+            "title": "VouherName"
+        },
+        {
+            "field": "Credit",
+            "title": "Credit",
+            "align": "right",
+            "footerFormatter": "totalFormatter"
+        },
+        {
+            "field": "Debit",
+            "title": "Debit",
+            "align": "right",
+            "footerFormatter": "totalFormatter"
+        }
+    ]
+}
