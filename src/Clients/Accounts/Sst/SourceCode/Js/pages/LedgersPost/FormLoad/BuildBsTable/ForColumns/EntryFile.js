@@ -1,7 +1,9 @@
-import ColumnsJson from './columns.json' with {type: 'json'};
+import optionsJson from './options.json' with {type: 'json'};
 
 const StartFunc = () => {
-    return ColumnsJson;
+    var $table = $('#table');
+
+    $table.bootstrapTable(optionsJson);
 };
 
 export { StartFunc };
