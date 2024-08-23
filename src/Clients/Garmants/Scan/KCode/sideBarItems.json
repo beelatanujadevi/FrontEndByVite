@@ -17,6 +17,11 @@
                 "name": "Reports",
                 "url": "ScanReports.html",
                 "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "StockReports",
+                "url": "ScanStockAll.html",
+                "icon": "bi bi-plus-circle"
             }
         ]
     }

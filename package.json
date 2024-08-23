@@ -25,7 +25,8 @@
     "Ledgers": "vite build --config src/Clients/Accounts/Ledgers/vite.config.js",
     "DayBooks": "vite build --config src/Clients/Accounts/DayBooks/vite.config.js",
     "TrailBalance": "vite build --config src/Clients/Accounts/TrailBalance/vite.config.js",
-    "Scan": "vite build --config src/Clients/Garmants/Scan/vite.config.js"
+    "GarmantsScan": "vite build --config src/Clients/Garmants/Scan/vite.config.js",
+    "GarmantsReports": "vite build --config src/Clients/Garmants/Reports/vite.config.js"
 
 
   },
