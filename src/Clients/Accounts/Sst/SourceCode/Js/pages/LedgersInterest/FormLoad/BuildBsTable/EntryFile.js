@@ -1,8 +1,8 @@
-import { StartFunc as StartFuncTableTag } from "./TableTag.js";
+// import { StartFunc as StartFuncTableTag } from "./TableTag.js";
 import { StartFunc as ForColumns } from "./ForColumns/EntryFile.js";
 
 const StartFunc = () => {
-    StartFuncTableTag();
+    // StartFuncTableTag();
     jFLocalInitialize().then();
 };
 
@@ -11,6 +11,10 @@ const jFLocalInitialize = async () => {
     let jVarLocalColumnsJson = ForColumns();
 
     $table.bootstrapTable({
+        toolbar: "#toolbar",
+        search: "true",
+        searchable: "true",
+        showFooter: "true",
         data: [],
         columns: jVarLocalColumnsJson
     });
