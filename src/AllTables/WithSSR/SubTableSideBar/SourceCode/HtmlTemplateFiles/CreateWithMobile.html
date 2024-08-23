@@ -42,8 +42,13 @@
                                 {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
                             {% endif %}
 
-                            {% if ColumnInfo.type === "NUMBER" %}
+                            {% if ColumnInfo.type === "TELEPHONE" %}
+                            <input name="{{ColumnName}}" type="tel"
+                                class="form-control {{ColumnInfo.HtmlTags.Create.class}}" autocomplete="off"
+                                {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
+                            {% endif %}
 
+                            {% if ColumnInfo.type === "NUMBER" %}
                             <input name="{{ColumnName}}" type="number" class="form-control" autocomplete="off"
                                 {{ColumnInfo.HtmlTags.Create.RequiredTag}} {{ColumnInfo.HtmlTags.Create.AutoFocusTag}}>
                             {% endif %}
@@ -70,12 +75,9 @@
         </div>
     </div>
 </section>
-
 {% endblock %}
 
-
 {% block css %}
-
 {% endblock %}
 
 {% block js %}
