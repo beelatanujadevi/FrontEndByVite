@@ -1,19 +1,10 @@
-import { StartFunc as StartFuncTableTag } from "./TableTag.js";
-import { StartFunc as ForColumns } from "./ForColumns/EntryFile.js";
+import optionsJson from './options.json' with {type: 'json'};
 
 const StartFunc = () => {
-    StartFuncTableTag();
-    jFLocalInitialize().then();
-};
-
-const jFLocalInitialize = async () => {
     var $table = $('#table');
-    let jVarLocalColumnsJson = ForColumns();
 
-    $table.bootstrapTable({
-        data: [],
-        columns: jVarLocalColumnsJson
-    });
+    $table.bootstrapTable(optionsJson);
 };
 
 export { StartFunc };
+
