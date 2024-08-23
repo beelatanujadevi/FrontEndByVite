@@ -1,5 +1,7 @@
 let StartFunc = ({ inData }) => {
     var $table = $('#table');
+    jFLocalHideSpinner();
+
     // let jVarLocalSortByDate = jFLocalSortByDate({ inData });
     // let jVarLocalSortByAccountName = jVarLocalSortByDate.sort((a, b) => a.value - b.value);
 
@@ -20,6 +22,11 @@ const jFLocalSortByDate = ({ inData }) => {
         // names must be equal
         return 0;
     });
+};
+
+let jFLocalHideSpinner = () => {
+    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
+    jVarLocalSpinnerId.style.display = "none";
 };
 
 export { StartFunc };

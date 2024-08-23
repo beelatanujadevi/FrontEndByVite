@@ -1,0 +1,61 @@
+{
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "showFooter": "true",
+    "showPrint": "true",
+    "pagination": "true",
+    "loading-template": "loadingTemplate",
+    "data": [],
+    "columns": [
+        {
+            "field": "KS-Serial",
+            "title": "#",
+            "formatter": "jFGlobalSerialColumn"
+        },
+        {
+            "field": "pk",
+            "title": "QrCode"
+        },
+        {
+            "field": "ProductName",
+            "title": "ProductName",
+            "align": "right"
+        },
+        {
+            "field": "CostPrice",
+            "title": "CostPrice",
+            "align": "right",
+            "footerFormatter": "totalFormatter"
+        },
+        {
+            "field": "PercentageValueAddition",
+            "title": "PTAddition",
+            "align": "right",
+            "footerFormatter": "totalFormatter"
+        },
+        {
+            "field": "SalePrice",
+            "title": "SalePrice",
+            "align": "right",
+            "footerFormatter": "totalFormatter"
+        },
+        {
+            "field": "SupplierName",
+            "title": "SupplierName"
+        },
+        {
+            "field": "PurchaseDate",
+            "title": "PurchaseDate"
+        },
+        {
+            "field": "Sold",
+            "title": "Sold",
+            "filter-control": "select"
+        },
+        {
+            "field": "ReturnStatus",
+            "title": "Sales Return"
+        }
+    ]
+}

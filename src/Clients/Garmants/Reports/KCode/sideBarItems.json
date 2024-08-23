@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Reports",
+        "key": "Reports",
+        "children": [
+            {
+                "name": "All",
+                "url": "ReportsStockAll.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "Instock",
+                "url": "ReportsStockInstock.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "SoldStock",
+                "url": "ReportsStockSoldStock.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    }
+]
