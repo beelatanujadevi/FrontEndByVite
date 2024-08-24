@@ -43,6 +43,10 @@
         {
             "field": "SupplierName",
             "title": "SupplierName"
+        },
+        {
+            "field": "PurchaseDate",
+            "title": "PurchaseDate"
         }
     ]
 }

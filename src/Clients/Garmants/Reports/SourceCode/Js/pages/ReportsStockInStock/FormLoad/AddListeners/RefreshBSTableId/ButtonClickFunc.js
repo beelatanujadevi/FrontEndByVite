@@ -2,28 +2,32 @@ let StartFunc = async () => {
 
     let jVarLocalQrCodeData = await jFLocalPromiseAll();
 
-    // let jVarLocalQrCodeData = await jFLocalFetchQrCodes();
-
     var $table = $('#table');
     jFLocalHideSpinner();
     $table.bootstrapTable("load", jVarLocalQrCodeData);
-
-    // $table.bootstrapTable({
-    //     data: jVarLocalQrCodeData
-    // });
 };
 
 let jFLocalPromiseAll = async () => {
-    let jVarLocalPromises = [jFLocalFetchQrCodes(), jFLocalFetchBillsQrCode()];
+    let jVarLocalPromises = [jFLocalFetchQrCodes(), jFLocalFetchBillsQrCode(), jFLocalFetchPurchases()];
 
-    let [a, b] = await Promise.allSettled(jVarLocalPromises);
+    let [a, b, c] = await Promise.allSettled(jVarLocalPromises);
 
     let jVarLocalReturnArray = a.value.filter(LoopQrCode =>
 
         !b.value.some(el => el.pk == LoopQrCode.pk)
     );
 
-    return jVarLocalReturnArray
+
+    let jVarLocalMatchedArray = c.value.filter(Vouchers =>
+        jVarLocalReturnArray.some(returnItem => returnItem.PurchasePk === Vouchers.pk)
+    );
+
+    return {
+        ...jVarLocalReturnArray,
+        ...jVarLocalMatchedArray
+    };
+
+    // return jVarLocalReturnArray
 };
 
 let jFLocalHideSpinner = () => {

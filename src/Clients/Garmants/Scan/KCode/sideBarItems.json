@@ -17,10 +17,26 @@
                 "name": "Reports",
                 "url": "ScanReports.html",
                 "icon": "bi bi-plus-circle"
+            }
+        ]
+    },
+    {
+        "name": "Reports",
+        "key": "Stock",
+        "children": [
+            {
+                "name": "All",
+                "url": "StockAll.html",
+                "icon": "bi bi-plus-circle"
             },
             {
-                "name": "StockReports",
-                "url": "ScanStockAll.html",
+                "name": "InStock",
+                "url": "StockInStock.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "SoldStock",
+                "url": "StockSoldStock.html",
                 "icon": "bi bi-plus-circle"
             }
         ]
