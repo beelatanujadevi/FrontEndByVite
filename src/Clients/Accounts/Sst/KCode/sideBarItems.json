@@ -174,5 +174,18 @@
                 "icon": "bi bi-plus-circle"
             }
         ]
+    },
+    {
+        "name": "BalanceSheet",
+        "key": "BalanceSheet",
+        "icon": "bi bi-currency-exchange",
+        "children": [
+            {
+                "name": "period",
+                "url": "BalanceSheetPeriod.html",
+                "icon": "bi bi-plus-circle"
+            }
+            
+        ]
     }
 ]
