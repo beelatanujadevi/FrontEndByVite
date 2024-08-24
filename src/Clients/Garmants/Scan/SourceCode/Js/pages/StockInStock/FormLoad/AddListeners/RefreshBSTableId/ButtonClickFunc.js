@@ -12,22 +12,9 @@ let jFLocalPromiseAll = async () => {
 
     let [a, b, c] = await Promise.allSettled(jVarLocalPromises);
 
-    let jVarLocalReturnArray = a.value.filter(LoopQrCode =>
-
-        !b.value.some(el => el.pk == LoopQrCode.pk)
-    );
-
-
-    let jVarLocalMatchedArray = c.value.filter(Vouchers =>
-        jVarLocalReturnArray.some(returnItem => returnItem.PurchasePk === Vouchers.pk)
-    );
-
-    return {
-        ...jVarLocalReturnArray,
-        ...jVarLocalMatchedArray
-    };
-
-    // return jVarLocalReturnArray
+    let jVarLocalReturnArray = a.value.filter(LoopQrCode => !b.value.some(el => el.pk === LoopQrCode.pk))
+        .map(element => (c.value.forEach(Vouchers => element.PurchasePk === Vouchers.pk ? element.PurchaseDate = Vouchers.Date : null), element));
+    return jVarLocalReturnArray
 };
 
 let jFLocalHideSpinner = () => {

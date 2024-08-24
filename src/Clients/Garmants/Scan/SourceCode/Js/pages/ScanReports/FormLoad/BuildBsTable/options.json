@@ -5,7 +5,7 @@
     "showFooter": "true",
     "showPrint": "true",
     "pagination": "true",
-    "loading-template": "loadingTemplate",
+
     "data": [],
     "columns": [
         {
@@ -45,8 +45,12 @@
             "title": "SupplierName"
         },
         {
-            "field": "PurchaseDate",
-            "title": "PurchaseDate"
+            "field": "Sales",
+            "title": "Sales"
+        },
+        {
+            "field": "Scan",
+            "title": "Scan"
         }
     ]
 }
