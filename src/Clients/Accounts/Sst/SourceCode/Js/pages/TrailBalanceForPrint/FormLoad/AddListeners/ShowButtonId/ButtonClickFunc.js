@@ -15,7 +15,7 @@ let StartFunc = async () => {
     const arrByID = jVarGlobalPresentViewData.filter(filterByAccountName);
 
     const jVarLocalGroupData = jFLocalGroupData({ inData: arrByID });
-    console.log("111111111 : ", arrByID, jVarLocalGroupData);
+    //console.log("111111111 : ", arrByID, jVarLocalGroupData);
 
     StartFuncAfterFetch({ inData: jVarLocalGroupData });
 };
@@ -42,19 +42,13 @@ let jFLocalGroupData = ({ inData }) => {
 
     for (const [key, value] of Object.entries(groupedByAge)) {
         let jVarLoopInsideCredits = value.map(element => {
-            console.log("111111 : ", element);
-
-
-            return parseFloat(element.Credit === undefined ? 0 : (element.Credit === "" ? 0 : element.Credit));
+           return parseFloat(element.Credit === undefined ? 0 : (element.Credit === "" ? 0 : element.Credit));
         }).reduce((partialSum, a) => partialSum + a, 0);
 
         let jVarLoopInsideDebits = value.map(element => {
-            console.log("222222222 : ", element);
-
             return parseFloat(element.Debit === undefined ? 0 : (element.Debit === "" ? 0 : element.Debit));
         }).reduce((partialSum, a) => partialSum + a, 0);
-        console.log("bbbbbbbbbbb : ", key, value, jVarLoopInsideCredits, jVarLoopInsideDebits);
-
+     
         jVarLocalCollection.push({
             AccountName: key,
             Credit: jVarLoopInsideCredits,
