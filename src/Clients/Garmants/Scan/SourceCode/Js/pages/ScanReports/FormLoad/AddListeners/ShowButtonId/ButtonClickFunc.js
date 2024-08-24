@@ -7,28 +7,13 @@ const CommonFromDateInputId = document.getElementById("FromDateInputId");
 const CommonToDateInputId = document.getElementById("ToDateInputId");
 
 let StartFunc = async () => {
-    let [a, b, c] = await Promise.all([Generate(), BillsQrCode(), Scan()]);
-
-    // jVarGlobalPresentViewData = [...a, ...b, ...c];
-
+    let jVarLocalPromises = [Generate(), BillsQrCode(), Scan()];
+    let [a, b, c] = await Promise.allSettled(jVarLocalPromises);
 
 
-    const jVarLocalGroupData = jFLocalGroupData({ inGeneratedata: a, inBillsQrCodeData: b, inScan: c });
-    // console.log("jVarLocalGroupData:", jVarLocalGroupData);
-
-    // const arrByID = jVarLocalGroupData.filter(filterByAccountName);
+    const jVarLocalGroupData = jFLocalGroupData({ inGeneratedata: a.value, inBillsQrCodeData: b.value, inScan: c.value });
 
     StartFuncAfterFetch({ inData: jVarLocalGroupData });
-};
-
-function filterByAccountName(item) {
-    console.log("item:",item);
-
-    if (item.Date >= CommonFromDateInputId.value && item.Date <= CommonToDateInputId.value) {
-        return true;
-    };
-
-    return false;
 };
 
 let jFLocalGroupData = ({ inGeneratedata, inBillsQrCodeData, inScan }) => {

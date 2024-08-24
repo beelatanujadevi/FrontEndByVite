@@ -14,7 +14,7 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "SoldStock",
+                "name": "Sold",
                 "url": "ReportsStockSoldStock.html",
                 "icon": "bi bi-plus-circle"
             }

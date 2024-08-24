@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    let jVarLocalHtmlId = 'ShowButtonId';
+    let jVarLocalHtmlId = 'RefreshBSTableId';
     let jVarLocalRefreshBSTableId = document.getElementById(jVarLocalHtmlId);
     jVarLocalRefreshBSTableId.click();
    
