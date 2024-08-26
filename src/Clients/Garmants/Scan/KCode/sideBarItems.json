@@ -17,6 +17,11 @@
                 "name": "Reports",
                 "url": "ScanReports.html",
                 "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "ScanStockAll",
+                "url": "ScanStockAll.html",
+                "icon": "bi bi-plus-circle"
             }
         ]
     },
@@ -35,8 +40,13 @@
                 "icon": "bi bi-plus-circle"
             },
             {
-                "name": "SoldStock",
+                "name": "Sold",
                 "url": "StockSoldStock.html",
+                "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "InStock-Scan",
+                "url": "StockInstockScan.html",
                 "icon": "bi bi-plus-circle"
             }
         ]
