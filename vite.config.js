@@ -1,36 +1,104 @@
-import { defineConfig, normalizePath, build } from 'vite';
-import nunjucks from 'vite-plugin-nunjucks';
+import { defineConfig, normalizePath, build } from 'vite'
+import fs from 'fs'
+import path, { resolve } from 'path'
+import { fileURLToPath } from 'url';
+import nunjucks from 'vite-plugin-nunjucks'
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
-import path, { resolve } from 'path';
-import { fileURLToPath } from 'url';
+const srcFolder = "SrcMazer";
+const distFolder = "publicDir/Mazer";
 
-import { StartFunc as StartFuncGetFiles } from "./KCode/getFiles.js";
-import { StartFunc as StartFuncGetVariables } from "./KCode/generateVariables.js";
+import sidebarItems from "./SrcMazer/sidebar-items.json";
+import horizontalMenuItems from "./SrcMazer/horizontal-menu-items.json";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SrcFolder = "src";
+const root = resolve(__dirname, srcFolder)
 
-const FrontEndDistFolder = "publicDir/bin";
+const getFiles = () => {
+    let files = {}
 
-const root = resolve(__dirname, SrcFolder);
+    fs.readdirSync(root)
+        .filter(filename => filename.endsWith('.html'))
+        .forEach(filename => {
+            files[filename.slice(0, -5)] = resolve(root, filename)
+        })
+    return files
+}
 
-const CommonTableName = "ItemCategories";
+const files = getFiles()
 
-let files = StartFuncGetFiles();
+const getVariables = (mode) => {
+    const variables = {}
+    Object.keys(files).forEach((filename) => {
+        if (filename.includes('layouts')) filename = `layouts/${filename}`
+        variables[filename + '.html'] = {
+            web_title: "Mazer Admin Dashboard",
+            sidebarItems,
+            horizontalMenuItems,
+            isDev: mode === 'development'
+        }
+    })
+    return variables
+}
+
+// Modules and extensions
+// If the value is true, then it will copy the files inside the `dist` folders
+// But if the value is false, it will copy the entire module files and folders
+const modulesToCopy = {
+    "@icon/dripicons": false, // With dist folder = false
+    "@fortawesome/fontawesome-free": false,
+    "rater-js": false,
+    "bootstrap-icons": false,
+    apexcharts: true,
+    "perfect-scrollbar": true,
+    flatpickr: true,
+    filepond: true,
+    "filepond-plugin-file-validate-size": true,
+    "filepond-plugin-file-validate-type": true,
+    "filepond-plugin-image-crop": true,
+    "filepond-plugin-image-exif-orientation": true,
+    "filepond-plugin-image-filter": true,
+    "filepond-plugin-image-preview": true,
+    "filepond-plugin-image-resize": true,
+    "feather-icons": true,
+    dragula: true,
+    dayjs: false,
+    "chart.js": true,
+    "choices.js": false,
+    parsleyjs: true,
+    sweetalert2: true,
+    summernote: true,
+    jquery: true,
+    quill: true,
+    tinymce: false,
+    "toastify-js": false,
+    "datatables.net": false,
+    "datatables.net-bs5": false,
+    "simple-datatables": true,
+    jsvectormap: true,
+}
+
+const copyModules = Object.keys(modulesToCopy).map(moduleName => {
+    const withDist = modulesToCopy[moduleName]
+    return {
+        src: normalizePath(resolve(__dirname, `./node_modules/${moduleName}${withDist ? `/${distFolder}` : ''}`)),
+        dest: 'assets/extensions',
+        rename: moduleName
+    }
+})
 
 build({
     configFile: false,
     build: {
         emptyOutDir: false,
-        outDir: resolve(__dirname, `../../${FrontEndDistFolder}/assets/compiled/js`),
+        outDir: resolve(__dirname, `${distFolder}/assets/compiled/js`),
         lib: {
             name: 'app',
             formats: ['umd'],
             fileName: 'app',
-            entry: './src/assets/js/app.js',
+            entry: `./${srcFolder}/assets/js/app.js`,
         },
         rollupOptions: {
             output: {
@@ -38,7 +106,9 @@ build({
             }
         }
     },
-});
+})
+
+
 
 export default defineConfig((env) => ({
     publicDir: 'static',
@@ -47,7 +117,10 @@ export default defineConfig((env) => ({
     plugins: [
         viteStaticCopy({
             targets: [
-                { src: normalizePath(resolve(__dirname, `./${SrcFolder}/assets/static`)), dest: "assets" }
+                { src: normalizePath(resolve(__dirname, `./${srcFolder}/assets/static`)), dest: 'assets' },
+                { src: normalizePath(resolve(__dirname, `./${distFolder}/assets/compiled/fonts`)), dest: 'assets/compiled/css' },
+                { src: normalizePath(resolve(__dirname, "./node_modules/bootstrap-icons/bootstrap-icons.svg")), dest: 'assets/static/images' },
+                ...copyModules
             ],
             watch: {
                 reloadPageOnChange: true
@@ -55,8 +128,9 @@ export default defineConfig((env) => ({
         }),
         nunjucks({
             templatesDir: root,
-            variables: StartFuncGetVariables({ mode: env.mode, inFilesArray: files, inTableName: CommonTableName }),
+            variables: getVariables(env.mode),
             nunjucksEnvironment: {
+
                 filters: {
                     containString: (str, containStr) => {
                         if (!str.length) return false
@@ -72,7 +146,7 @@ export default defineConfig((env) => ({
     ],
     resolve: {
         alias: {
-            '@': normalizePath(resolve(__dirname, 'src')),
+            '@': normalizePath(resolve(__dirname, srcFolder)),
             '~bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
             '~bootstrap-icons': resolve(__dirname, 'node_modules/bootstrap-icons'),
             '~perfect-scrollbar': resolve(__dirname, 'node_modules/perfect-scrollbar'),
@@ -83,11 +157,24 @@ export default defineConfig((env) => ({
         emptyOutDir: false,
         manifest: true,
         target: "chrome58",
-        outDir: resolve(__dirname, FrontEndDistFolder),
+        outDir: resolve(__dirname, distFolder),
         rollupOptions: {
             input: files,
             output: {
+                entryFileNames: `assets/compiled/js/[name].js`,
+                chunkFileNames: `assets/compiled/js/[name].js`,
+
+                assetFileNames: (a) => {
+                    const extname = a.name.split('.')[1]
+                    let folder = extname ? `${extname}/` : ''
+
+                    // Put fonts into css folder
+                    if (['woff', 'woff2', 'ttf'].includes(extname))
+                        folder = 'fonts/'
+
+                    return `assets/compiled/${folder}[name][extname]`
+                }
             }
         },
     }
-}));
+}))
