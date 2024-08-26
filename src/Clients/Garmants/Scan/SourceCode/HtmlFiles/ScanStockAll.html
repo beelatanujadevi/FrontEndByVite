@@ -5,20 +5,20 @@
 {% block content %}
 <div class="pagetitle">
     <h1 class="d-block d-sm-none">{{tableName}} ShowAll</h1>
-    <h1 class="d-none d-sm-block"><a id="RefreshBSTableId">Reports</a></h1>
+    <h1 class="d-none d-sm-block"><a id="RefreshBSTableId">Stock All</a></h1>
     <nav class="d-none d-sm-block">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Scan</li>
-            <li class="breadcrumb-item active">Reports</li>
+            <li class="breadcrumb-item">Reports</li>
+            <li class="breadcrumb-item active">Show All</li>
         </ol>
     </nav>
 </div>
 
+
 <div class="spinner-border" id="SpinnerId" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
-
 <table id="table">
 </table>
 {% endblock %}
@@ -46,5 +46,5 @@
 </script>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/extensions/export/bootstrap-table-export.min.js"></script>
-<script type="module" src="../Js/pages/ScanReports/StartFunc.js"></script>
+<script type="module" src="../Js/pages/ScanStockAll/StartFunc.js"></script>
 {% endblock %}
