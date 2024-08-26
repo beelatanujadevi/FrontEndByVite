@@ -1,5 +1,9 @@
+import ConfigJson from '../../../../Config.json' with {type: "json"};
+
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/Journals/DataOnly`;
+    let jVarLocalRoutePath = ConfigJson.routePath; 
+
+    let jVarLocalFetchUrl = `/${jVarLocalRoutePath}/Journals/DataOnly`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
