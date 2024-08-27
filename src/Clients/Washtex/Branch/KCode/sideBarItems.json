@@ -1,0 +1,14 @@
+[
+    {
+        "name": "QrCodes",
+        "key": "QrCodes",
+        "icon": "bi bi-envelope-open-fill",
+        "children": [
+            {
+                "name": "Show",
+                "url": "QrCodesShow.html",
+                "icon": "bi bi-plus-circle"
+            }
+        ]
+    }
+]
