@@ -13,6 +13,11 @@
                 "name": "Today",
                 "url": "Today.html",
                 "icon": "bi bi-plus-circle"
+            },
+            {
+                "name": "All",
+                "url": "QrCodesQrCodesAll.html",
+                "icon": "bi bi-plus-circle"
             }
         ]
     }
