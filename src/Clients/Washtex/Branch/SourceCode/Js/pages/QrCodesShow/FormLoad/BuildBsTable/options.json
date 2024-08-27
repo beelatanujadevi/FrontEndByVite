@@ -16,28 +16,36 @@
             "title": "QrCode"
         },
         {
-            "field": "Date",
-            "title": "Date"
+            "field": "BookingData.CustomerData.CustomerName",
+            "title": "CustomerName"
         },
         {
-            "field": "VouherName",
-            "title": "VouherName"
+            "field": "Category",
+            "title": "Category"
         },
         {
-            "field": "Description",
-            "title": "Description"
+            "field": "BookingData.CustomerData.CustomerMobile",
+            "title": "CustomerMobile"
         },
         {
-            "field": "Credit",
-            "title": "Credit",
-            "align": "right",
-            "footerFormatter": "totalFormatter"
+            "field": "ItemName",
+            "title": "ItemName"
         },
         {
-            "field": "Debit",
-            "title": "Debit",
-            "align": "right",
-            "footerFormatter": "totalFormatter"
+            "field": "Rate",
+            "title": "Rate"
+        },
+        {
+            "field": "BookingData.OrderData.Currentdateandtime",
+            "title": "Order DateTime"
+        },
+        {
+            "field": "DeliveryDateTime",
+            "title": "DeliveryDateTime"
+        },
+        {
+            "field": "BookingData.OrderData.BranchName",
+            "title": "BranchName"
         }
     ]
 }
